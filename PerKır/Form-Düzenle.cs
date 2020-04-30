@@ -70,6 +70,7 @@ namespace PerKır
         {
             verilerimigöster();
             cmb_Kısım();
+            cmb_belge();
         }
 
      
@@ -296,8 +297,43 @@ namespace PerKır
             baglantı.Close();
         }
 
+        public void cmb_belge()
+        {
+            SqlCommand komut = new SqlCommand();
+            komut.CommandText = "SELECT *FROM cmb_belge";
+            komut.Connection = baglantı;
+            komut.CommandType = CommandType.Text;
+            SqlDataReader dr;
+            baglantı.Open();
+            dr = komut.ExecuteReader();
+            while (dr.Read())
+            {
+                cmbmykbelge.Items.Add(dr["belge"]);
+            }
+            baglantı.Close();
+        }
 
-        //  ** Comboboxlar değiştirildiğinde
+        private void cmb_belge_durumu()
+        {
+            SqlCommand komut = new SqlCommand();
+            komut.CommandText = "SELECT *FROM cmb_belge_durum where belge=@seçilendeğer";
+            komut.Parameters.AddWithValue("@seçilendeğer", cmbmykbelge.Text);
+            komut.Connection = baglantı;
+            komut.CommandType = CommandType.Text;
+            SqlDataReader dr;
+            baglantı.Open();
+            dr = komut.ExecuteReader();
+            while (dr.Read())
+            {
+                cmbBelgeDurumu.Items.Add(dr["belge_durum"]);
+
+            }
+            baglantı.Close();
+        }
+
+
+
+        //  ** Comboboxlar seçildiğinde
         private void cmbKısım_SelectedIndexChanged(object sender, EventArgs e) //Kısım değiştirildiğinde bölümü yenile.
         {
             cmbBölüm.Items.Clear();
@@ -319,6 +355,12 @@ namespace PerKır
             cmb_birim_amiri();
         }
 
+        private void cmbmykbelge_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbBelgeDurumu.Items.Clear();
+            cmb_belge_durumu();
+        }
+
 
         // ** //Comboboxları temizle ve yeniden yükle
         public void cmbTekrargüncelle()
@@ -337,6 +379,14 @@ namespace PerKır
             
             cmbGörevi.Items.Clear();
             cmb_Görev();
+        }
+
+        public void cmbTekrargüncelleMYK_İSG()
+        {
+            cmbmykbelge.Items.Clear();
+            cmb_belge();
+            cmbBelgeDurumu.Items.Clear();
+            cmb_belge_durumu();
         }
 
         // ** Comboboxları düzenle butonları
@@ -369,6 +419,20 @@ namespace PerKır
             GörevTanım frm8 = new GörevTanım();
             frm8.ShowDialog();
         }
+
+        private void btnDüzenleBelge_Click(object sender, EventArgs e)
+        {
+            frmTanımBelge belge = new frmTanımBelge();
+            belge.ShowDialog();
+        }
+
+        private void btnDüzenleBelgeDurumu_Click(object sender, EventArgs e)
+        {
+            frmTanımBelgeDurumu belge = new frmTanımBelgeDurumu();
+            belge.ShowDialog();
+        }
+
+
     }
 }
     

@@ -33,17 +33,22 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtBirimAra = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cmbgörevBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.personelDataSet12 = new PerKır.PersonelDataSet12();
+            this.göreviDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbgörevBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.personelDataSet1cmbHepsiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personelDataSet1cmbHepsi = new PerKır.PersonelDataSet1cmbHepsi();
             this.lblGörevTanımıSilGizli = new System.Windows.Forms.Label();
             this.btnGörevTanımıSil = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtara = new System.Windows.Forms.TextBox();
+            this.cmbgörevBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.personelDataSet12 = new PerKır.PersonelDataSet12();
             this.cmbgörevBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.personelDataSet11 = new PerKır.PersonelDataSet11();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbBirim_seç = new System.Windows.Forms.ComboBox();
-            this.btnEkleGörevTanımı = new System.Windows.Forms.Button();
+            this.btnEkleBelgeDurumu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGörevTanımıEkle = new System.Windows.Forms.TextBox();
             this.personelDataSet10 = new PerKır.PersonelDataSet10();
@@ -51,16 +56,14 @@
             this.cmb_görevTableAdapter = new PerKır.PersonelDataSet10TableAdapters.cmb_görevTableAdapter();
             this.cmb_görevTableAdapter1 = new PerKır.PersonelDataSet11TableAdapters.cmb_görevTableAdapter();
             this.cmb_görevTableAdapter2 = new PerKır.PersonelDataSet12TableAdapters.cmb_görevTableAdapter();
-            this.personelDataSet1cmbHepsi = new PerKır.PersonelDataSet1cmbHepsi();
-            this.personelDataSet1cmbHepsiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmbbirimBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmb_birimTableAdapter = new PerKır.PersonelDataSet1cmbHepsiTableAdapters.cmb_birimTableAdapter();
-            this.cmbgörevBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.cmb_görevTableAdapter3 = new PerKır.PersonelDataSet1cmbHepsiTableAdapters.cmb_görevTableAdapter();
-            this.göreviDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbgörevBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personelDataSet1cmbHepsiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personelDataSet1cmbHepsi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbgörevBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personelDataSet12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbgörevBindingSource1)).BeginInit();
@@ -68,10 +71,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personelDataSet10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbgörevBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personelDataSet1cmbHepsi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personelDataSet1cmbHepsiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbbirimBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbgörevBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -130,15 +130,35 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // cmbgörevBindingSource2
+            // göreviDataGridViewTextBoxColumn
             // 
-            this.cmbgörevBindingSource2.DataMember = "cmb_görev";
-            this.cmbgörevBindingSource2.DataSource = this.personelDataSet12;
+            this.göreviDataGridViewTextBoxColumn.DataPropertyName = "görevi";
+            this.göreviDataGridViewTextBoxColumn.HeaderText = "Görevi";
+            this.göreviDataGridViewTextBoxColumn.Name = "göreviDataGridViewTextBoxColumn";
+            this.göreviDataGridViewTextBoxColumn.ReadOnly = true;
+            this.göreviDataGridViewTextBoxColumn.Width = 300;
             // 
-            // personelDataSet12
+            // birimDataGridViewTextBoxColumn
             // 
-            this.personelDataSet12.DataSetName = "PersonelDataSet12";
-            this.personelDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.birimDataGridViewTextBoxColumn.DataPropertyName = "Birim";
+            this.birimDataGridViewTextBoxColumn.HeaderText = "Bağlı Birim";
+            this.birimDataGridViewTextBoxColumn.Name = "birimDataGridViewTextBoxColumn";
+            this.birimDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cmbgörevBindingSource3
+            // 
+            this.cmbgörevBindingSource3.DataMember = "cmb_görev";
+            this.cmbgörevBindingSource3.DataSource = this.personelDataSet1cmbHepsiBindingSource;
+            // 
+            // personelDataSet1cmbHepsiBindingSource
+            // 
+            this.personelDataSet1cmbHepsiBindingSource.DataSource = this.personelDataSet1cmbHepsi;
+            this.personelDataSet1cmbHepsiBindingSource.Position = 0;
+            // 
+            // personelDataSet1cmbHepsi
+            // 
+            this.personelDataSet1cmbHepsi.DataSetName = "PersonelDataSet1cmbHepsi";
+            this.personelDataSet1cmbHepsi.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblGörevTanımıSilGizli
             // 
@@ -178,6 +198,16 @@
             this.txtara.TextChanged += new System.EventHandler(this.txtara_TextChanged);
             this.txtara.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtara_KeyDown);
             // 
+            // cmbgörevBindingSource2
+            // 
+            this.cmbgörevBindingSource2.DataMember = "cmb_görev";
+            this.cmbgörevBindingSource2.DataSource = this.personelDataSet12;
+            // 
+            // personelDataSet12
+            // 
+            this.personelDataSet12.DataSetName = "PersonelDataSet12";
+            this.personelDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmbgörevBindingSource1
             // 
             this.cmbgörevBindingSource1.DataMember = "cmb_görev";
@@ -191,7 +221,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cmbBirim_seç);
-            this.groupBox1.Controls.Add(this.btnEkleGörevTanımı);
+            this.groupBox1.Controls.Add(this.btnEkleBelgeDurumu);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtGörevTanımıEkle);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -209,16 +239,16 @@
             this.cmbBirim_seç.Size = new System.Drawing.Size(108, 21);
             this.cmbBirim_seç.TabIndex = 3;
             // 
-            // btnEkleGörevTanımı
+            // btnEkleBelgeDurumu
             // 
-            this.btnEkleGörevTanımı.BackColor = System.Drawing.Color.White;
-            this.btnEkleGörevTanımı.Location = new System.Drawing.Point(393, 55);
-            this.btnEkleGörevTanımı.Name = "btnEkleGörevTanımı";
-            this.btnEkleGörevTanımı.Size = new System.Drawing.Size(49, 20);
-            this.btnEkleGörevTanımı.TabIndex = 2;
-            this.btnEkleGörevTanımı.Text = "Ekle";
-            this.btnEkleGörevTanımı.UseVisualStyleBackColor = false;
-            this.btnEkleGörevTanımı.Click += new System.EventHandler(this.btnEkleBirimAmiri_Click);
+            this.btnEkleBelgeDurumu.BackColor = System.Drawing.Color.White;
+            this.btnEkleBelgeDurumu.Location = new System.Drawing.Point(393, 55);
+            this.btnEkleBelgeDurumu.Name = "btnEkleBelgeDurumu";
+            this.btnEkleBelgeDurumu.Size = new System.Drawing.Size(49, 20);
+            this.btnEkleBelgeDurumu.TabIndex = 2;
+            this.btnEkleBelgeDurumu.Text = "Ekle";
+            this.btnEkleBelgeDurumu.UseVisualStyleBackColor = false;
+            this.btnEkleBelgeDurumu.Click += new System.EventHandler(this.btnEkleBirimAmiri_Click);
             // 
             // label1
             // 
@@ -259,16 +289,6 @@
             // 
             this.cmb_görevTableAdapter2.ClearBeforeFill = true;
             // 
-            // personelDataSet1cmbHepsi
-            // 
-            this.personelDataSet1cmbHepsi.DataSetName = "PersonelDataSet1cmbHepsi";
-            this.personelDataSet1cmbHepsi.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // personelDataSet1cmbHepsiBindingSource
-            // 
-            this.personelDataSet1cmbHepsiBindingSource.DataSource = this.personelDataSet1cmbHepsi;
-            this.personelDataSet1cmbHepsiBindingSource.Position = 0;
-            // 
             // cmbbirimBindingSource
             // 
             this.cmbbirimBindingSource.DataMember = "cmb_birim";
@@ -278,29 +298,9 @@
             // 
             this.cmb_birimTableAdapter.ClearBeforeFill = true;
             // 
-            // cmbgörevBindingSource3
-            // 
-            this.cmbgörevBindingSource3.DataMember = "cmb_görev";
-            this.cmbgörevBindingSource3.DataSource = this.personelDataSet1cmbHepsiBindingSource;
-            // 
             // cmb_görevTableAdapter3
             // 
             this.cmb_görevTableAdapter3.ClearBeforeFill = true;
-            // 
-            // göreviDataGridViewTextBoxColumn
-            // 
-            this.göreviDataGridViewTextBoxColumn.DataPropertyName = "görevi";
-            this.göreviDataGridViewTextBoxColumn.HeaderText = "Görevi";
-            this.göreviDataGridViewTextBoxColumn.Name = "göreviDataGridViewTextBoxColumn";
-            this.göreviDataGridViewTextBoxColumn.ReadOnly = true;
-            this.göreviDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // birimDataGridViewTextBoxColumn
-            // 
-            this.birimDataGridViewTextBoxColumn.DataPropertyName = "Birim";
-            this.birimDataGridViewTextBoxColumn.HeaderText = "Bağlı Birim";
-            this.birimDataGridViewTextBoxColumn.Name = "birimDataGridViewTextBoxColumn";
-            this.birimDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // GörevTanım
             // 
@@ -318,6 +318,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbgörevBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personelDataSet1cmbHepsiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personelDataSet1cmbHepsi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbgörevBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personelDataSet12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbgörevBindingSource1)).EndInit();
@@ -326,10 +329,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personelDataSet10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbgörevBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personelDataSet1cmbHepsi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personelDataSet1cmbHepsiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbbirimBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbgörevBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -345,7 +345,7 @@
         private System.Windows.Forms.TextBox txtara;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cmbBirim_seç;
-        private System.Windows.Forms.Button btnEkleGörevTanımı;
+        private System.Windows.Forms.Button btnEkleBelgeDurumu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtGörevTanımıEkle;
         private PersonelDataSet10 personelDataSet10;

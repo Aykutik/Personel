@@ -71,6 +71,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cmb_Hepsi.xsd</DependentUpon>
     </Compile>
+    <Compile Include="cmb_tabloset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cmb_tabloset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form-Ekle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,11 +124,17 @@
     <Compile Include="Form-Tanım Görev.Designer.cs">
       <DependentUpon>Form-Tanım Görev.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form-Tanım MYK.cs">
+    <Compile Include="Form-Tanım Belge.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form-Tanım MYK.Designer.cs">
-      <DependentUpon>Form-Tanım MYK.cs</DependentUpon>
+    <Compile Include="Form-Tanım Belge.Designer.cs">
+      <DependentUpon>Form-Tanım Belge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form-Tanım Belge Durumu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form-Tanım Belge Durumu.Designer.cs">
+      <DependentUpon>Form-Tanım Belge Durumu.cs</DependentUpon>
     </Compile>
     <Compile Include="PersonelDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -234,8 +245,11 @@
     <EmbeddedResource Include="Form-Tanım Görev.resx">
       <DependentUpon>Form-Tanım Görev.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form-Tanım MYK.resx">
-      <DependentUpon>Form-Tanım MYK.cs</DependentUpon>
+    <EmbeddedResource Include="Form-Tanım Belge.resx">
+      <DependentUpon>Form-Tanım Belge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form-Tanım Belge Durumu.resx">
+      <DependentUpon>Form-Tanım Belge Durumu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -267,6 +281,17 @@
     </None>
     <None Include="Cmb_Hepsi.xss">
       <DependentUpon>Cmb_Hepsi.xsd</DependentUpon>
+    </None>
+    <None Include="cmb_tabloset.xsc">
+      <DependentUpon>cmb_tabloset.xsd</DependentUpon>
+    </None>
+    <None Include="cmb_tabloset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cmb_tabloset.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cmb_tabloset.xss">
+      <DependentUpon>cmb_tabloset.xsd</DependentUpon>
     </None>
     <None Include="PersonelDataSet.xsc">
       <DependentUpon>PersonelDataSet.xsd</DependentUpon>

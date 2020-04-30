@@ -30,16 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnResimEkle = new System.Windows.Forms.Button();
             this.pbPerFoto = new System.Windows.Forms.PictureBox();
             this.txtTcKimlik = new System.Windows.Forms.TextBox();
             this.lblTcKimlik = new System.Windows.Forms.Label();
-            this.btnperkaydet = new System.Windows.Forms.Button();
             this.txtEPosta = new System.Windows.Forms.TextBox();
             this.txtAdSoyad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblAdSoyad = new System.Windows.Forms.Label();
+            this.dtİştenÇıkışTarihi = new System.Windows.Forms.DateTimePicker();
             this.txtDahili = new System.Windows.Forms.TextBox();
             this.lblDahiliNo = new System.Windows.Forms.Label();
             this.txtPersonelKodu = new System.Windows.Forms.TextBox();
@@ -60,6 +59,7 @@
             this.cmbİl = new System.Windows.Forms.ComboBox();
             this.cmbDoğumYeri = new System.Windows.Forms.ComboBox();
             this.cmbÖğrenimDurumu = new System.Windows.Forms.ComboBox();
+            this.lblKanGrubu = new System.Windows.Forms.Label();
             this.txtAdres = new System.Windows.Forms.TextBox();
             this.lblİlçe = new System.Windows.Forms.Label();
             this.lblİl = new System.Windows.Forms.Label();
@@ -75,7 +75,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDoğumYeri = new System.Windows.Forms.Label();
-            this.lblKanGrubu = new System.Windows.Forms.Label();
             this.tbÇalışmaBilgileri = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
             this.btnGörevTanımıAç = new System.Windows.Forms.Button();
@@ -84,20 +83,19 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnEkleKısım = new System.Windows.Forms.Button();
             this.dtKıdemTarihi = new System.Windows.Forms.DateTimePicker();
-            this.dtİştenÇıkışTarihi = new System.Windows.Forms.DateTimePicker();
             this.dtİşeGirişTarihi = new System.Windows.Forms.DateTimePicker();
             this.cmbÖzelDurum = new System.Windows.Forms.ComboBox();
             this.cmbGörevi = new System.Windows.Forms.ComboBox();
             this.cmbBirimAmiri = new System.Windows.Forms.ComboBox();
             this.txtAGİ = new System.Windows.Forms.TextBox();
-            this.lblAGİ = new System.Windows.Forms.Label();
-            this.txtNetÜcret = new System.Windows.Forms.TextBox();
-            this.lblNetÜcret = new System.Windows.Forms.Label();
             this.cmbBirim = new System.Windows.Forms.ComboBox();
             this.cmbKısım = new System.Windows.Forms.ComboBox();
+            this.lblAGİ = new System.Windows.Forms.Label();
             this.lblBirimAmiri = new System.Windows.Forms.Label();
             this.cmbBölüm = new System.Windows.Forms.ComboBox();
+            this.txtNetÜcret = new System.Windows.Forms.TextBox();
             this.lblBirim = new System.Windows.Forms.Label();
+            this.lblNetÜcret = new System.Windows.Forms.Label();
             this.lblÖzelDurum = new System.Windows.Forms.Label();
             this.lblBölüm = new System.Windows.Forms.Label();
             this.lblKıdemYılı = new System.Windows.Forms.Label();
@@ -108,7 +106,6 @@
             this.lblEmekli = new System.Windows.Forms.Label();
             this.lblKıdemTarihi = new System.Windows.Forms.Label();
             this.lblGörev = new System.Windows.Forms.Label();
-            this.lblİştençıkıştarihi = new System.Windows.Forms.Label();
             this.lblİşeGirişTarihi = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -119,6 +116,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.grpbxMeslekiYeterlilik = new System.Windows.Forms.GroupBox();
+            this.btnDüzenleBelgeDurumu = new System.Windows.Forms.Button();
+            this.btnDüzenleBelge = new System.Windows.Forms.Button();
             this.cmbmykbelge = new System.Windows.Forms.ComboBox();
             this.lblBelgeDurumu = new System.Windows.Forms.Label();
             this.cmbBelgeDurumu = new System.Windows.Forms.ComboBox();
@@ -150,14 +149,15 @@
             this.Durak = new System.Windows.Forms.Label();
             this.cmbDurak = new System.Windows.Forms.ComboBox();
             this.lblServis = new System.Windows.Forms.Label();
+            this.lblİştençıkıştarihi = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnperkaydet = new System.Windows.Forms.Button();
             this.personelDataSet5 = new PerKır.PersonelDataSet5();
             this.personelDataSet5BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personelDataSet5BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cmbkısımBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmb_kısımTableAdapter = new PerKır.PersonelDataSet5TableAdapters.cmb_kısımTableAdapter();
             this.cmbkısımBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerFoto)).BeginInit();
             this.tbcperbilgiler.SuspendLayout();
@@ -203,17 +203,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personel Bilgileri";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(746, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 20);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "İptal";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
-            // 
             // btnResimEkle
             // 
             this.btnResimEkle.BackColor = System.Drawing.Color.Transparent;
@@ -252,17 +241,6 @@
             this.lblTcKimlik.TabIndex = 2;
             this.lblTcKimlik.Text = "TC Kimlik No";
             // 
-            // btnperkaydet
-            // 
-            this.btnperkaydet.BackColor = System.Drawing.Color.White;
-            this.btnperkaydet.Location = new System.Drawing.Point(666, 9);
-            this.btnperkaydet.Name = "btnperkaydet";
-            this.btnperkaydet.Size = new System.Drawing.Size(74, 20);
-            this.btnperkaydet.TabIndex = 4;
-            this.btnperkaydet.Text = "Güncelle";
-            this.btnperkaydet.UseVisualStyleBackColor = false;
-            this.btnperkaydet.Click += new System.EventHandler(this.btnperkaydet_Click_1);
-            // 
             // txtEPosta
             // 
             this.txtEPosta.Location = new System.Drawing.Point(233, 118);
@@ -297,6 +275,15 @@
             this.lblAdSoyad.Size = new System.Drawing.Size(65, 18);
             this.lblAdSoyad.TabIndex = 2;
             this.lblAdSoyad.Text = "Ad Soyad";
+            // 
+            // dtİştenÇıkışTarihi
+            // 
+            this.dtİştenÇıkışTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtİştenÇıkışTarihi.Location = new System.Drawing.Point(655, 112);
+            this.dtİştenÇıkışTarihi.Name = "dtİştenÇıkışTarihi";
+            this.dtİştenÇıkışTarihi.Size = new System.Drawing.Size(104, 20);
+            this.dtİştenÇıkışTarihi.TabIndex = 4;
+            this.dtİştenÇıkışTarihi.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             // 
             // txtDahili
             // 
@@ -494,6 +481,16 @@
             this.cmbÖğrenimDurumu.Size = new System.Drawing.Size(121, 21);
             this.cmbÖğrenimDurumu.TabIndex = 4;
             // 
+            // lblKanGrubu
+            // 
+            this.lblKanGrubu.AutoSize = true;
+            this.lblKanGrubu.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblKanGrubu.Location = new System.Drawing.Point(253, 102);
+            this.lblKanGrubu.Name = "lblKanGrubu";
+            this.lblKanGrubu.Size = new System.Drawing.Size(73, 18);
+            this.lblKanGrubu.TabIndex = 2;
+            this.lblKanGrubu.Text = "Kan Grubu";
+            // 
             // txtAdres
             // 
             this.txtAdres.Location = new System.Drawing.Point(114, 161);
@@ -639,16 +636,6 @@
             this.lblDoğumYeri.TabIndex = 2;
             this.lblDoğumYeri.Text = "Doğum Yeri";
             // 
-            // lblKanGrubu
-            // 
-            this.lblKanGrubu.AutoSize = true;
-            this.lblKanGrubu.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblKanGrubu.Location = new System.Drawing.Point(253, 102);
-            this.lblKanGrubu.Name = "lblKanGrubu";
-            this.lblKanGrubu.Size = new System.Drawing.Size(73, 18);
-            this.lblKanGrubu.TabIndex = 2;
-            this.lblKanGrubu.Text = "Kan Grubu";
-            // 
             // tbÇalışmaBilgileri
             // 
             this.tbÇalışmaBilgileri.Controls.Add(this.label13);
@@ -762,15 +749,6 @@
             this.dtKıdemTarihi.Size = new System.Drawing.Size(96, 20);
             this.dtKıdemTarihi.TabIndex = 4;
             // 
-            // dtİştenÇıkışTarihi
-            // 
-            this.dtİştenÇıkışTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtİştenÇıkışTarihi.Location = new System.Drawing.Point(655, 112);
-            this.dtİştenÇıkışTarihi.Name = "dtİştenÇıkışTarihi";
-            this.dtİştenÇıkışTarihi.Size = new System.Drawing.Size(104, 20);
-            this.dtİştenÇıkışTarihi.TabIndex = 4;
-            this.dtİştenÇıkışTarihi.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
-            // 
             // dtİşeGirişTarihi
             // 
             this.dtİşeGirişTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -810,33 +788,6 @@
             this.txtAGİ.Size = new System.Drawing.Size(121, 20);
             this.txtAGİ.TabIndex = 3;
             // 
-            // lblAGİ
-            // 
-            this.lblAGİ.AutoSize = true;
-            this.lblAGİ.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAGİ.Location = new System.Drawing.Point(491, 203);
-            this.lblAGİ.Name = "lblAGİ";
-            this.lblAGİ.Size = new System.Drawing.Size(31, 18);
-            this.lblAGİ.TabIndex = 2;
-            this.lblAGİ.Text = "AGİ";
-            // 
-            // txtNetÜcret
-            // 
-            this.txtNetÜcret.Location = new System.Drawing.Point(586, 177);
-            this.txtNetÜcret.Name = "txtNetÜcret";
-            this.txtNetÜcret.Size = new System.Drawing.Size(121, 20);
-            this.txtNetÜcret.TabIndex = 3;
-            // 
-            // lblNetÜcret
-            // 
-            this.lblNetÜcret.AutoSize = true;
-            this.lblNetÜcret.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblNetÜcret.Location = new System.Drawing.Point(491, 177);
-            this.lblNetÜcret.Name = "lblNetÜcret";
-            this.lblNetÜcret.Size = new System.Drawing.Size(68, 18);
-            this.lblNetÜcret.TabIndex = 2;
-            this.lblNetÜcret.Text = "Net Ücret";
-            // 
             // cmbBirim
             // 
             this.cmbBirim.FormattingEnabled = true;
@@ -854,6 +805,16 @@
             this.cmbKısım.Size = new System.Drawing.Size(144, 21);
             this.cmbKısım.TabIndex = 4;
             this.cmbKısım.SelectedIndexChanged += new System.EventHandler(this.cmbKısım_SelectedIndexChanged);
+            // 
+            // lblAGİ
+            // 
+            this.lblAGİ.AutoSize = true;
+            this.lblAGİ.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAGİ.Location = new System.Drawing.Point(491, 203);
+            this.lblAGİ.Name = "lblAGİ";
+            this.lblAGİ.Size = new System.Drawing.Size(31, 18);
+            this.lblAGİ.TabIndex = 2;
+            this.lblAGİ.Text = "AGİ";
             // 
             // lblBirimAmiri
             // 
@@ -874,6 +835,13 @@
             this.cmbBölüm.TabIndex = 4;
             this.cmbBölüm.SelectedIndexChanged += new System.EventHandler(this.cmbBölüm_SelectedIndexChanged);
             // 
+            // txtNetÜcret
+            // 
+            this.txtNetÜcret.Location = new System.Drawing.Point(586, 177);
+            this.txtNetÜcret.Name = "txtNetÜcret";
+            this.txtNetÜcret.Size = new System.Drawing.Size(121, 20);
+            this.txtNetÜcret.TabIndex = 3;
+            // 
             // lblBirim
             // 
             this.lblBirim.AutoSize = true;
@@ -883,6 +851,16 @@
             this.lblBirim.Size = new System.Drawing.Size(41, 18);
             this.lblBirim.TabIndex = 2;
             this.lblBirim.Text = "Birim";
+            // 
+            // lblNetÜcret
+            // 
+            this.lblNetÜcret.AutoSize = true;
+            this.lblNetÜcret.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblNetÜcret.Location = new System.Drawing.Point(491, 177);
+            this.lblNetÜcret.Name = "lblNetÜcret";
+            this.lblNetÜcret.Size = new System.Drawing.Size(68, 18);
+            this.lblNetÜcret.TabIndex = 2;
+            this.lblNetÜcret.Text = "Net Ücret";
             // 
             // lblÖzelDurum
             // 
@@ -980,16 +958,6 @@
             this.lblGörev.TabIndex = 2;
             this.lblGörev.Text = "Görev";
             // 
-            // lblİştençıkıştarihi
-            // 
-            this.lblİştençıkıştarihi.AutoSize = true;
-            this.lblİştençıkıştarihi.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblİştençıkıştarihi.Location = new System.Drawing.Point(545, 112);
-            this.lblİştençıkıştarihi.Name = "lblİştençıkıştarihi";
-            this.lblİştençıkıştarihi.Size = new System.Drawing.Size(74, 18);
-            this.lblİştençıkıştarihi.TabIndex = 2;
-            this.lblİştençıkıştarihi.Text = "Çıkış Tarihi";
-            // 
             // lblİşeGirişTarihi
             // 
             this.lblİşeGirişTarihi.AutoSize = true;
@@ -1081,8 +1049,8 @@
             // 
             // grpbxMeslekiYeterlilik
             // 
-            this.grpbxMeslekiYeterlilik.Controls.Add(this.button5);
-            this.grpbxMeslekiYeterlilik.Controls.Add(this.button3);
+            this.grpbxMeslekiYeterlilik.Controls.Add(this.btnDüzenleBelgeDurumu);
+            this.grpbxMeslekiYeterlilik.Controls.Add(this.btnDüzenleBelge);
             this.grpbxMeslekiYeterlilik.Controls.Add(this.cmbmykbelge);
             this.grpbxMeslekiYeterlilik.Controls.Add(this.lblBelgeDurumu);
             this.grpbxMeslekiYeterlilik.Controls.Add(this.cmbBelgeDurumu);
@@ -1094,6 +1062,28 @@
             this.grpbxMeslekiYeterlilik.TabStop = false;
             this.grpbxMeslekiYeterlilik.Text = " Mesleki Yeterlilik";
             // 
+            // btnDüzenleBelgeDurumu
+            // 
+            this.btnDüzenleBelgeDurumu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDüzenleBelgeDurumu.Location = new System.Drawing.Point(292, 66);
+            this.btnDüzenleBelgeDurumu.Name = "btnDüzenleBelgeDurumu";
+            this.btnDüzenleBelgeDurumu.Size = new System.Drawing.Size(25, 21);
+            this.btnDüzenleBelgeDurumu.TabIndex = 7;
+            this.btnDüzenleBelgeDurumu.Text = "+";
+            this.btnDüzenleBelgeDurumu.UseVisualStyleBackColor = false;
+            this.btnDüzenleBelgeDurumu.Click += new System.EventHandler(this.btnDüzenleBelgeDurumu_Click);
+            // 
+            // btnDüzenleBelge
+            // 
+            this.btnDüzenleBelge.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDüzenleBelge.Location = new System.Drawing.Point(292, 37);
+            this.btnDüzenleBelge.Name = "btnDüzenleBelge";
+            this.btnDüzenleBelge.Size = new System.Drawing.Size(25, 21);
+            this.btnDüzenleBelge.TabIndex = 6;
+            this.btnDüzenleBelge.Text = "+";
+            this.btnDüzenleBelge.UseVisualStyleBackColor = false;
+            this.btnDüzenleBelge.Click += new System.EventHandler(this.btnDüzenleBelge_Click);
+            // 
             // cmbmykbelge
             // 
             this.cmbmykbelge.FormattingEnabled = true;
@@ -1101,6 +1091,7 @@
             this.cmbmykbelge.Name = "cmbmykbelge";
             this.cmbmykbelge.Size = new System.Drawing.Size(144, 21);
             this.cmbmykbelge.TabIndex = 4;
+            this.cmbmykbelge.SelectedIndexChanged += new System.EventHandler(this.cmbmykbelge_SelectedIndexChanged);
             // 
             // lblBelgeDurumu
             // 
@@ -1399,6 +1390,38 @@
             this.lblServis.TabIndex = 2;
             this.lblServis.Text = "Araç";
             // 
+            // lblİştençıkıştarihi
+            // 
+            this.lblİştençıkıştarihi.AutoSize = true;
+            this.lblİştençıkıştarihi.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblİştençıkıştarihi.Location = new System.Drawing.Point(545, 112);
+            this.lblİştençıkıştarihi.Name = "lblİştençıkıştarihi";
+            this.lblİştençıkıştarihi.Size = new System.Drawing.Size(74, 18);
+            this.lblİştençıkıştarihi.TabIndex = 2;
+            this.lblİştençıkıştarihi.Text = "Çıkış Tarihi";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(746, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 20);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "İptal";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // btnperkaydet
+            // 
+            this.btnperkaydet.BackColor = System.Drawing.Color.White;
+            this.btnperkaydet.Location = new System.Drawing.Point(666, 9);
+            this.btnperkaydet.Name = "btnperkaydet";
+            this.btnperkaydet.Size = new System.Drawing.Size(74, 20);
+            this.btnperkaydet.TabIndex = 4;
+            this.btnperkaydet.Text = "Güncelle";
+            this.btnperkaydet.UseVisualStyleBackColor = false;
+            this.btnperkaydet.Click += new System.EventHandler(this.btnperkaydet_Click_1);
+            // 
             // personelDataSet5
             // 
             this.personelDataSet5.DataSetName = "PersonelDataSet5";
@@ -1427,26 +1450,6 @@
             // 
             this.cmbkısımBindingSource1.DataMember = "cmb_kısım";
             this.cmbkısımBindingSource1.DataSource = this.personelDataSet5BindingSource;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(292, 37);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(25, 21);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "+";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.Location = new System.Drawing.Point(292, 66);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(25, 21);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "+";
-            this.button5.UseVisualStyleBackColor = false;
             // 
             // frmDüzenle
             // 
@@ -1627,7 +1630,7 @@
         public System.Windows.Forms.ComboBox cmbÇalışmaŞekli;
         public System.Windows.Forms.ComboBox cmbEmekli;
         public System.Windows.Forms.ComboBox cmbGörevi;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnDüzenleBelgeDurumu;
+        private System.Windows.Forms.Button btnDüzenleBelge;
     }
 }
